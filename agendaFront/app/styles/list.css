@@ -1,0 +1,13 @@
+.ver-al-middle{
+	vertical-align: middle !important;
+}
+
+.no-width{
+	width: 1px;
+}
+
+.right-bottom-corner{
+	right: 25rem;
+	bottom: 5rem;
+	position: fixed;
+}

@@ -1,0 +1,32 @@
+<div id="login">
+    <h3>Register</h3>
+    <form id="signin" class="" role="form" ng-submit="create(user)">
+        <div class="row">
+            <div class="input-group" ng-class="{'has-error': loginError.username }">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="username" type="text" class="form-control" name="username" ng-model="user.username" placeholder="Username">
+            </div>
+            <label class="control-label" for="username" ng-if='loginError.username'><span ng-repeat='error in loginError.username'>{{ error }}<br/></span></label>
+        </div>
+        <br/>
+        <div class="row">
+             <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input id="email" type="text" class="form-control" name="email" ng-model="user.email" placeholder="Email">
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="input-group" ng-class="{'has-error': loginError.password }">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password" ng-model="user.password">
+                
+            </div>
+            <label class="control-label" for="password" ng-if='loginError.password'><span ng-repeat='error in loginError.password'>{{ error }}<br/></span></label>
+        </div>
+        <br/>
+        <div class="row">
+            <button type="submit" class="btn btn-primary">Register</button>    
+        </div>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<div class="ready" ng-hide="ready">
+	<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<div id="list" ng-show="ready">
+	<!-- used for searching the current list -->
+	<h1 class="text-center">Contact List</h1>
+	<div class="row">
+		<div class="col-sm-11">
+			<md-input-container class="md-block" flex-gt-sm="">
+		        <label>Search</label>
+		        <input ng-model="search">
+		    </md-input-container>
+			<md-button ng-click="createPerson()" class="md-fab md-primary right-bottom-corner">
+				<i class="glyphicon glyphicon-plus">
+					<md-tooltip md-direction="top">Add Contact</md-tooltip>			
+				</i>
+			</md-button>
+		</div>
+	</div>
+	<table class=" table table-striped table-hover">
+		<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Phone</th>
+			<th>Email</th>
+		</tr>
+		</thead>
+		<tr ng-repeat="p in persons | filter:search">
+			<td class="ver-al-middle">{{ $index+1 }}</td>
+			<td class="ver-al-middle">{{ p.name }}</td>
+			<td class="ver-al-middle">{{ p.phone }}</td>
+			<td class="ver-al-middle">{{ p.email }}</td>
+			<td class=" no-width"><button class="btn btn-info" ng-click="detailPerson(p.id)"><i class="glyphicon glyphicon-pencil"><md-tooltip md-direction="top">Detail/Edit Contact</md-tooltip></i></button></td>
+			<td class=" no-width"><button class="btn btn-danger" ng-click="deletePerson(p.id)"><i class="glyphicon glyphicon-trash"><md-tooltip md-direction="top">Delete Contact</md-tooltip></i></button></td>
+		</tr>
+	</table>
+</div>
